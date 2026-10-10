@@ -1,0 +1,10 @@
+{
+  "id": "rule.unattended.common",
+  "version": "0.1.0",
+  "description": "被看护对象在场且看护人员持续缺席达到阈值时生成无人看管候选事件",
+  "all": [
+    { "field": "subject_present", "op": ">=", "value": 1 },
+    { "field": "guard_count", "op": "<", "value": 1 },
+    { "field": "guard_absent_seconds", "op": ">=", "value": 5 }
+  ]
+}

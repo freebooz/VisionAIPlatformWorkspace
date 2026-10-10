@@ -1,0 +1,8 @@
+[project]
+name = "vision-ai-platform-tools"
+version = "0.1.0"
+description = "VisionAIPlatformWorkspace（机器视觉 AI 平台工作空间）工程工具"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["Tools/tests"]

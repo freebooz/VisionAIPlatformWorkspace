@@ -1,0 +1,20 @@
+id: unattended-detection
+version: 0.1.0
+description: 无人看管检测算法管线
+nodes:
+  - id: detector
+    algorithm: vision.detect.person
+    target_fps: 5
+  - id: tracker
+    algorithm: vision.track.multi-object
+  - id: zone
+    algorithm: spatial.zone.membership
+  - id: duration
+    algorithm: temporal.duration
+edges:
+  - from: detector.objects
+    to: tracker.objects
+  - from: tracker.tracks
+    to: zone.tracks
+  - from: zone.states
+    to: duration.states

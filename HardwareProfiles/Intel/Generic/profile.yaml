@@ -1,0 +1,10 @@
+id: intel-generic
+name: Intel 通用边缘硬件画像
+architecture: x86_64
+accelerator:
+  family: intel
+  runtime: openvino
+memory:
+  preferred: host
+media:
+  decoder: vaapi-or-onevpl

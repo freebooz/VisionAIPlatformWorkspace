@@ -1,0 +1,108 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "dev",
+      "displayName": "开发配置",
+      "binaryDir": "${sourceDir}/.artifacts/build/dev",
+      "cacheVariables": {
+        "VISIONAI_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "发布配置",
+      "binaryDir": "${sourceDir}/.artifacts/build/release",
+      "cacheVariables": {
+        "VISIONAI_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "strict",
+      "displayName": "严格质量门禁配置（警告即错误 + 静态分析）",
+      "binaryDir": "${sourceDir}/.artifacts/build/strict",
+      "cacheVariables": {
+        "VISIONAI_BUILD_TESTS": "ON",
+        "VISIONAI_ENABLE_STATIC_ANALYSIS": "ON",
+        "VISIONAI_WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "asan",
+      "displayName": "内存安全检查配置（AddressSanitizer）",
+      "binaryDir": "${sourceDir}/.artifacts/build/asan",
+      "cacheVariables": {
+        "VISIONAI_BUILD_TESTS": "ON",
+        "VISIONAI_ENABLE_ASAN": "ON"
+      }
+    },
+    {
+      "name": "analyze",
+      "displayName": "静态分析配置（MSVC /analyze）",
+      "binaryDir": "${sourceDir}/.artifacts/build/analyze",
+      "cacheVariables": {
+        "VISIONAI_BUILD_TESTS": "ON",
+        "VISIONAI_ENABLE_STATIC_ANALYSIS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev",
+      "configuration": "Debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "configuration": "Release"
+    },
+    {
+      "name": "strict",
+      "configurePreset": "strict",
+      "configuration": "Debug"
+    },
+    {
+      "name": "asan",
+      "configurePreset": "asan",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "analyze",
+      "configurePreset": "analyze",
+      "configuration": "Debug"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev",
+      "configuration": "Debug",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "configuration": "Release",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "strict",
+      "configurePreset": "strict",
+      "configuration": "Debug",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "asan",
+      "configurePreset": "asan",
+      "configuration": "RelWithDebInfo",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "analyze",
+      "configurePreset": "analyze",
+      "configuration": "Debug",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}

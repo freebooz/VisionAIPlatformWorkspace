@@ -1,0 +1,18 @@
+id: scene.generic-safety
+version: 0.1.0
+name: 通用机器视觉安全场景
+
+pipelines:
+  - unattended-detection
+
+rules:
+  - rule.unattended.common
+
+evidence:
+  snapshot: true
+  clip_before_seconds: 10
+  clip_after_seconds: 20
+
+acceptance:
+  profile: generic-safety-v1
+

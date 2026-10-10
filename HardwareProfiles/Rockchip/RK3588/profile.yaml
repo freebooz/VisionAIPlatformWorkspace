@@ -1,0 +1,12 @@
+id: rockchip-rk3588
+name: Rockchip RK3588 边缘硬件画像
+architecture: aarch64
+accelerator:
+  family: rknpu
+  runtime: rknn
+memory:
+  preferred: dmabuf
+media:
+  zero_copy: true
+  decoder: mpp
+  scaler: rga

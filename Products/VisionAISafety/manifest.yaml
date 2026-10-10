@@ -1,0 +1,14 @@
+id: product.visionai-safety
+version: 0.1.0
+name: VisionAISafety
+display_name: 通用机器视觉安全产品
+
+scenes:
+  - scene.generic-safety
+
+dependencies:
+  pipelines:
+    - unattended-detection
+  rules:
+    - rule.unattended.common
+
